@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -23,9 +23,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Character"
         android:layout_centerHorizontal="true"
-
+        android:text="Create Character"
         />
 
     <LinearLayout
@@ -38,7 +37,6 @@
             android:id="@+id/stat1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="32dp"
             android:onClick="statSelect"
             android:text="Strength"
             android:textSize="15dp" />
@@ -48,7 +46,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="32dp"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="10"
             android:textSize="25dp" />
@@ -57,7 +54,6 @@
             android:id="@+id/stat2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="Dexterity"
             android:textSize="15dp" />
@@ -67,7 +63,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="32dp"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="10"
             android:textSize="25dp" />
@@ -76,7 +71,6 @@
             android:id="@+id/stat3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="Constitution"
             android:textSize="15dp" />
@@ -86,7 +80,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="32dp"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="10"
             android:textSize="25dp" />
@@ -95,7 +88,6 @@
             android:id="@+id/stat4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="Intelligence"
             android:textSize="15dp" />
@@ -105,7 +97,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="32dp"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="10"
             android:textSize="25dp" />
@@ -114,7 +105,6 @@
             android:id="@+id/stat5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="Wisdom"
             android:textSize="15dp" />
@@ -124,7 +114,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="32dp"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="10"
             android:textSize="25dp" />
@@ -133,7 +122,6 @@
             android:id="@+id/stat6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="Charisma"
             android:textSize="15dp" />
@@ -143,10 +131,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minWidth="32dp"
-            android:minHeight="48dp"
             android:onClick="statSelect"
             android:text="10"
             android:textSize="25dp" />
 
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save/Load"
+            android:onClick="createCharacter"
+            />
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name" />
     </LinearLayout>
-</RelativeLayout >
+</RelativeLayout>

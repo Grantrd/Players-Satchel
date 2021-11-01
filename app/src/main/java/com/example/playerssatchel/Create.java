@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -78,10 +79,14 @@ public class Create extends AppCompatActivity {
         stat.setText(String.valueOf(stat_value.getValue()));
         stats[d] = stat_value.getValue();
     }
-//    public void createCharacter(View view){
-//       Character character = new Character("hello", stats[0], stats[1], stats[2], stats[3], stats[4], stats[5]);
-//       character.character_sheet(view);
-//    }
+    public void createCharacter(View view){
+       Character character = new Character("hello", stats[0], stats[1], stats[2], stats[3], stats[4], stats[5]);
+        Toast.makeText(this, "testing", Toast.LENGTH_LONG).show();
+       //character.save_character(view);
+//       TextView name =(TextView) findViewById(R.id.name);
+//       name.setText(character.load_character(view));
+       //character.character_sheet(view);
+    }
 
 
 

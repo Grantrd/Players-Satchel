@@ -20,7 +20,8 @@ import java.nio.charset.StandardCharsets;
 public class Character extends AppCompatActivity {
     private AlertDialog dialog;
     private AlertDialog.Builder charactersheet;
-    EditText stats;
+    //EditText stats;
+    String filename = "thing.txt";
     String name;
     int strength;
     int dexterity;
@@ -62,36 +63,47 @@ public class Character extends AppCompatActivity {
     public void save_character(View view) {
         FileOutputStream fos = null;
         try {
-            fos = openFileOutput(name+".txt", MODE_PRIVATE);
-            fos.write(name.getBytes(StandardCharsets.UTF_8));
-            Toast.makeText(this, "saved to " + getFilesDir() + "/" + name, Toast.LENGTH_LONG);
-            fos.close();
+            fos = openFileOutput(filename, MODE_PRIVATE);
+            fos.write("this is a test".getBytes());
+            Toast.makeText(this, "saved to " + getFilesDir() + "/" + filename, Toast.LENGTH_LONG).show();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        if (fos != null){
+            try {
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
-    public void load_character(View view) {
+    public String load_character(View view) {
         FileInputStream fis = null;
+        String stats = "open";
         try {
-            fis = openFileInput(name+".txt");
+            fis = openFileInput(filename);
             InputStreamReader isr = new InputStreamReader(fis);
             BufferedReader br = new BufferedReader(isr);
             StringBuilder sb = new StringBuilder();
             String text;
-            while ((text = br.readLine()) != null){
-                //sb.append(text).append("\n");
+
+            while ((stats = br.readLine()) != null){
+                sb.append(stats).append("\n");
             }
-            stats.setText(sb.toString());
+            //stats.setText(sb.toString());
+            stats = sb.toString();
+            if (fis != null){
+                fis.close();
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
+        return stats;
     }
     //EditText simpleEditText = (EditText) findViewById(R.id.simpleEditText);
     //String editTextValue = simpleEditText.getText().toString();
