@@ -80,7 +80,7 @@ public class Create extends AppCompatActivity {
         stats[d] = stat_value.getValue();
     }
     public void createCharacter(View view){
-       Character character = new Character("hello", stats[0], stats[1], stats[2], stats[3], stats[4], stats[5]);
+//       Character character = new Character("hello", stats[0], stats[1], stats[2], stats[3], stats[4], stats[5]);
         Toast.makeText(this, "testing", Toast.LENGTH_LONG).show();
        //character.save_character(view);
 //       TextView name =(TextView) findViewById(R.id.name);

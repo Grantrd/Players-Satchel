@@ -16,8 +16,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.nio.charset.StandardCharsets;
+import android.content.Context;
 
 public class Character extends AppCompatActivity {
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_character);
+//    }
     private AlertDialog dialog;
     private AlertDialog.Builder charactersheet;
     //EditText stats;
@@ -29,14 +35,8 @@ public class Character extends AppCompatActivity {
     int intelligence;
     int wisdom;
     int charisma;
-
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_create);
-//
+//    public Character() {
 //    }
-
     public Character(String name, int strength, int dexterity, int constitution, int intelligence,
                      int wisdom, int charisma) {
         this.name = name;
@@ -60,27 +60,35 @@ public class Character extends AppCompatActivity {
         dialog.show();
     }
 
-    public void save_character(View view) {
+//    public void save_character(View view) {
+//        FileOutputStream fos;
+//        try {
+//            fos = openFileOutput(filename, MODE_PRIVATE);
+//            fos.write("this is a test".getBytes());
+//            Toast.makeText(this, "saved to " + getFilesDir() + "/" + filename, Toast.LENGTH_LONG).show();
+//            fos.close();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+    public void print(Context co, View view) {
         FileOutputStream fos = null;
         try {
-            fos = openFileOutput(filename, MODE_PRIVATE);
-            fos.write("this is a test".getBytes());
-            Toast.makeText(this, "saved to " + getFilesDir() + "/" + filename, Toast.LENGTH_LONG).show();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            fos = co.openFileOutput(filename, 0);
+            //Toast.makeText(getBaseContext(), "Saved to "+ getFilesDir() + "/" + filename, Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+            fos.write(this.name.getBytes());
+
+            fos.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (fos != null){
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
-    public String load_character(View view) {
+    public String load_character(String filename) {
         FileInputStream fis = null;
         String stats = "open";
         try {
@@ -105,6 +113,10 @@ public class Character extends AppCompatActivity {
         }
         return stats;
     }
+//    public void print(View view){
+//
+//
+//    }
     //EditText simpleEditText = (EditText) findViewById(R.id.simpleEditText);
     //String editTextValue = simpleEditText.getText().toString();
 }
